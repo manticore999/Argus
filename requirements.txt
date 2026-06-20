@@ -1,0 +1,9 @@
+kubernetes==29.0.0
+fastapi==0.109.0
+uvicorn==0.27.0
+sse-starlette==1.8.2
+google-genai
+python-dotenv
+pydantic
+prometheus-api-client
+langgraph
