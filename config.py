@@ -20,16 +20,9 @@ load_dotenv(_ENV_PATH)
 GOOGLE_API_KEY: str = os.getenv("GOOGLE_API_KEY", "")
 GEMINI_MODEL: str   = os.getenv("GEMINI_MODEL", "gemini-2.5-flash-lite")
 
-API_KEYS: list[str] = [
-    "AIzaSyBYq5D40xj0mbh3CPF1ooTgVPvJILA1wvE",
-    "AIzaSyBXd5uw-6hvfY7UkqP6uxSGUTsq2rDweKA",
-    "AIzaSyCQABPRqZargvP_0mfX74Pvjf_CxET9v1Q",
-    "AIzaSyAPQil86QtF-3OiDtcI7rPN2LH8P55F__M",
-    "AIzaSyAlJoPP2q7MQZmhHeSNAFl2q67EzwXliOw",
-    "AIzaSyAzS5eV16UYbiH-TiyqcTnQ1GeP-nSYmng",
-    "AIzaSyD2feo43gpqNTb7sPJpzmNNe1f3BO97XyI",
-    "AIzaSyDc-e6_Ir6PPCQS5LPcoeZqRurXG1BxkwE"
-]
+# Load comma-separated keys from env for key rotation support
+_keys_env = os.getenv("GEMINI_API_KEYS", "") or os.getenv("GOOGLE_API_KEYS", "")
+API_KEYS: list[str] = [k.strip() for k in _keys_env.split(",") if k.strip()]
 
 if GOOGLE_API_KEY and GOOGLE_API_KEY not in API_KEYS:
     API_KEYS.insert(0, GOOGLE_API_KEY)
