@@ -37,6 +37,7 @@ For a detailed walkthrough of the internal technical details and pipeline data f
 * `agent/`: Interactive CLI conversation agent loop.
 * `frontend/`: React dashboard interface.
 * `tests/`: End-to-end integration and cluster simulation tests.
+* `deploy/terraform/`: Terraform configuration that deploys Argus inside a cluster.
 
 ---
 
@@ -100,6 +101,8 @@ For a detailed walkthrough of the internal technical details and pipeline data f
    ```bash
    python -m agent
    ```
+
+To run Argus inside the cluster instead, see [deploy/terraform](deploy/terraform/README.md).
 
 ---
 

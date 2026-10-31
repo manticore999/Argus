@@ -1,0 +1,9 @@
+# Copy to terraform.tfvars and fill in your values. terraform.tfvars is ignored by Git.
+
+gemini_api_keys = "key1,key2,key3"
+
+# kube_context       = "minikube"
+# namespace          = "argus"
+# image              = "argus:latest"
+# enable_remediation = true
+# enable_prometheus  = true
